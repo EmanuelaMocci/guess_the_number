@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  background-color: #222;
+  height: 100vh;
+}
+header {
+  padding: 40px 0 80px 0;
+  border-bottom: 5px solid white;
+}
+header div button {
+  border: none;
+  background-color: white;
+  padding: 20px;
+}
+header div button h5 {
+  color: black;
+}
+header div h6 {
+  color: white;
+}
+.secret_container {
+  margin-top: -65px;
+}
+.secret {
+  color: black;
+  background-color: white;
+  margin: 0 auto;
+}
+.secret div {
+  font-size: 50px;
+  padding: 30px;
+}
+
+/* main */
+.input_number button {
+  border: none;
+  padding: 30px;
+}
+.input_value {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid white;
+  outline: none;
+  font-size: 40px;
+  color: white;
+}
