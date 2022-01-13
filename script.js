@@ -11,6 +11,7 @@ let highscore = 0;
 document.querySelector(".input_button").addEventListener("click", function () {
   const numberSelected = Number(document.querySelector(".input_value").value);
 
+  // In caso di vincita
   if (numberSelected == randomNumber) {
     document.querySelector("body").style.backgroundColor = "#60b347";
 
@@ -22,10 +23,13 @@ document.querySelector(".input_button").addEventListener("click", function () {
 
       document.querySelector(".highscore").textContent = highscore;
     }
+
+    // Se il numero inserito è più piccolo del numero random
   } else if (numberSelected < randomNumber) {
     document.querySelector(".result").textContent = "📉 The number is too low";
     document.querySelector(".input_value").value = "";
 
+    // Se sbaglia tutti i tentativi ed esaurisce il punteggio
     if (score > 1) {
       score--;
       document.querySelector(".score").textContent = score;
@@ -34,9 +38,12 @@ document.querySelector(".input_button").addEventListener("click", function () {
 
       document.querySelector(".score").textContent = 0;
     }
+
+    // Se il numero inserito è più grande del numero random
   } else if (numberSelected > randomNumber) {
     document.querySelector(".result").textContent = "📈 The number is too high";
 
+    // Se sbaglia tutti i tentativi ed esaurisce il punteggio
     if (score > 1) {
       score--;
       document.querySelector(".score").textContent = score;
@@ -46,6 +53,13 @@ document.querySelector(".input_button").addEventListener("click", function () {
       document.querySelector(".score").textContent = 0;
     }
     document.querySelector(".input_value").value = "";
+  }
+
+  // Se inserisce un numero non compreso tra 1 e 20
+  if (numberSelected < 1 || numberSelected > 20) {
+    score++;
+    document.querySelector(".result").textContent =
+      "👾 Choose a number between 1 and 20";
   }
 });
 
