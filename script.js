@@ -58,6 +58,8 @@ document.querySelector(".input_button").addEventListener("click", function () {
   // Se inserisce un numero non compreso tra 1 e 20
   if (numberSelected < 1 || numberSelected > 20) {
     score++;
+    document.querySelector(".score").textContent = score;
+
     document.querySelector(".result").textContent =
       "👾 Choose a number between 1 and 20";
   }
